@@ -3219,3 +3219,11 @@ input, select, textarea {
 			}
 
 	}
+/* Tactical Tech Button Override */
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:hover {
+    border-color: #00FF41 !important; /* Terminal Green */
+    color: #00FF41 !important;
+}
