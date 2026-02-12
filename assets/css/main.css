@@ -2597,7 +2597,7 @@ input, select, textarea {
     background-attachment: fixed !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-size: cover !important;
+    background-size: 120% !important;
     color: rgba(255, 255, 255, 0.5);
     height: 100vh !important;
     left: 0;
