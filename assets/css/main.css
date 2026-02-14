@@ -3334,3 +3334,31 @@ button:hover,
     transform: translateY(-8px) !important; /* Doubled the lift for a more pronounced feel */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important; /* Deeper shadow for higher elevation */
 }
+/* ==========================================
+   FINAL OVERLAY KILL-SWITCH
+   Forcibly removes the Poptrox hover layer 
+   and the "View" button text/icon.
+   ========================================== */
+
+/* Target the specific hover overlay classes */
+.work-item .image.thumb:after, 
+.work-item .image.thumb:before,
+.work-item .image.thumb .poptrox-overlay,
+.poptrox-popup .closer,
+.poptrox-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Ensure the image doesn't dim or change color on hover */
+.work-item .image.thumb {
+    background: none !important;
+}
+
+/* Amplify the lift as discussed - 8px for a magnetic feel */
+#main .image.thumb img:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+}
