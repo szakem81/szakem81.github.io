@@ -3228,13 +3228,12 @@ input[type="button"]:hover,
     color: #00FF41 !important;
 }
 /* ==========================================
-   SECTION TWO: THUMBNAIL GRID LOCK
-   Forces impact images to the exact same 
-   size without pixel distortion, ONLY in Section 2.
+   IMAGE FIX: COMMANDER'S INTENT (05.jpg)
+   Keeps the 16:9 grid symmetry, but shrinks the 
+   image to fit entirely inside the box without cropping.
    ========================================== */
-#two .work-item .image.thumb img {
-    width: 100% !important;
-    aspect-ratio: 16 / 9 !important; 
-    object-fit: cover !important; 
-    display: block !important;
+#two .work-item .image.thumb img[src*="05.jpg"] {
+    object-fit: contain !important; 
+    background-color: #0f172a !important; /* Dark blue background to fill the empty sides */
+    padding: 5px !important;
 }
