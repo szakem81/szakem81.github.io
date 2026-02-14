@@ -3417,3 +3417,34 @@ button:hover,
 #two .work-item .image.thumb:hover img {
     transform: translateY(-8px) !important;
 }
+/* ==========================================
+   FINAL OVERLAY & VIEW TEXT PURGE
+   Matched exactly to browser inspect output.
+   ========================================== */
+
+/* Kills the overlay.png and the opacity tint */
+.image:before {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    opacity: 0 !important;
+}
+
+/* Kills the 'View' text and the white border box */
+.image.thumb:after {
+    content: none !important;
+    display: none !important;
+    opacity: 0 !important;
+    border: none !important;
+}
+
+/* Ensures the image stays clear on hover */
+.image.thumb:hover:before {
+    opacity: 0 !important;
+}
+
+/* Maintain your magnetic lift */
+#main .image.thumb img:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+}
