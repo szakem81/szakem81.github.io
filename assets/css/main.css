@@ -3268,3 +3268,43 @@ input[type="button"]:hover,
 #two .work-item h3 {
     font-size: calc(1em + 2px) !important; 
 }
+/* ==========================================
+   TACTICAL ELEVATION & BUTTON UI
+   Establishes a constant base lift and increases 
+   depth on hover for both images and buttons.
+   ========================================== */
+
+/* 1. Constant Image Elevation */
+#main .image.thumb img {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important; /* Constant heavy shadow */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out !important;
+    border-radius: 4px !important;
+}
+
+/* Image Hover Lift */
+#main .image.thumb img:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7) !important; /* Darker, wider shadow on hover */
+    transform: translateY(-4px) !important; /* Upward lift */
+}
+
+/* 2. Button Pronounced Borders & Elevation */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+    border: 2px solid rgba(255, 255, 255, 0.6) !important; /* Thicker, more pronounced border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4) !important; /* Constant heavy shadow */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out !important;
+}
+
+/* Button Hover Lift */
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+button:hover,
+.button:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7) !important; /* Darker, wider shadow on hover */
+    transform: translateY(-4px) !important; /* Upward lift */
+    border-color: rgba(255, 255, 255, 1) !important; /* Border brightens fully on hover */
+}
