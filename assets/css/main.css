@@ -3384,3 +3384,36 @@ button:hover,
     opacity: 0 !important;
     visibility: hidden !important;
 }
+/* ==========================================
+   SECTION TWO: OVERLAY & VIEW BUTTON PURGE
+   Neutralizes the specific pseudo-elements 
+   causing the darkening and 'View' text.
+   ========================================== */
+
+/* 1. Kills the darkening overlay and 'View' text */
+#two .work-item .image.thumb::after {
+    opacity: 0 !important;
+    display: none !important;
+    content: none !important;
+    background: none !important;
+}
+
+/* 2. Kills the blue border/glow effect on hover */
+#two .work-item .image.thumb::before {
+    opacity: 0 !important;
+    display: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 3. Ensures the image itself is the only thing responding */
+#two .work-item .image.thumb img {
+    opacity: 1 !important;
+    filter: none !important;
+    /* Keeps your 8px magnetic lift intact */
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+#two .work-item .image.thumb:hover img {
+    transform: translateY(-8px) !important;
+}
