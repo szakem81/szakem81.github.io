@@ -3228,13 +3228,13 @@ input[type="button"]:hover,
     color: #00FF41 !important;
 }
 /* ==========================================
-   SYMMETRICAL THUMBNAIL GRID LOCK
-   Forces all impact images to the exact same 
-   size and ratio without pixel distortion.
+   SECTION TWO: THUMBNAIL GRID LOCK
+   Forces impact images to the exact same 
+   size without pixel distortion, ONLY in Section 2.
    ========================================== */
 #two .work-item .image.thumb img {
     width: 100% !important;
-    aspect-ratio: 16 / 9 !important; 
+    aspect-ratio: 1 / 1 !important; 
     object-fit: cover !important; 
     display: block !important;
 }
