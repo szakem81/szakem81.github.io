@@ -3232,7 +3232,7 @@ input[type="button"]:hover,
    Forces all impact images to the exact same 
    size and ratio without pixel distortion.
    ========================================== */
-.work-item .image.thumb img {
+#two .work-item .image.thumb img {
     width: 100% !important;
     aspect-ratio: 16 / 9 !important; 
     object-fit: cover !important; 
