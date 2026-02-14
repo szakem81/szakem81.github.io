@@ -3308,3 +3308,29 @@ button:hover,
     transform: translateY(-4px) !important; /* Upward lift */
     border-color: rgba(255, 255, 255, 1) !important; /* Border brightens fully on hover */
 }
+/* ==========================================
+   TACTICAL CLEAN-UP: REMOVE OVERLAYS & BOOST LIFT
+   Removes "View" buttons/shadowing and synchronizes
+   a pronounced hover lift across the UI.
+   ========================================== */
+
+/* 1. Kill the 'View' button and hover overlay shadowing */
+.work-item .image.thumb:after,
+.work-item .image.thumb:before {
+    display: none !important;
+    opacity: 0 !important;
+    content: none !important;
+}
+
+/* 2. Unified Enhanced Lift (Images & Buttons) */
+#main .image.thumb img,
+.button {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45) !important;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease-in-out !important;
+}
+
+#main .image.thumb img:hover,
+.button:hover {
+    transform: translateY(-8px) !important; /* Doubled the lift for a more pronounced feel */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important; /* Deeper shadow for higher elevation */
+}
