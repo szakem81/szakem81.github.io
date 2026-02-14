@@ -3237,3 +3237,22 @@ input[type="button"]:hover,
     background-color: #0f172a !important; /* Dark blue background to fill the empty sides */
     padding: 5px !important;
 }
+/* ==========================================
+   PREDEFINED CONTAINER SIZES (THE RIGID GRID)
+   Executes predefined sizing for text containers
+   so the layout remains mathematically symmetrical.
+   ========================================== */
+
+/* 1. Locks the Title Container */
+#two .work-item h3 {
+    min-height: 3em !important; 
+    display: flex !important;
+    align-items: center !important; /* Centers the title text vertically */
+    margin-bottom: 0.5em !important;
+}
+
+/* 2. Locks the Paragraph Container */
+#two .work-item p {
+    min-height: 180px !important; /* Forces the box to be exactly this tall */
+    margin-bottom: 0 !important;
+}
