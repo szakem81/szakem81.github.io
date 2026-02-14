@@ -3362,3 +3362,25 @@ button:hover,
     transform: translateY(-8px) !important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
 }
+/* ==========================================
+   SECTION TWO: TOTAL OVERLAY SUPPRESSION
+   Specifically targets the grid items to kill
+   all hidden hover layers and "View" buttons.
+   ========================================== */
+
+/* 1. Kills all pseudo-elements in Section 2 grid */
+#two .work-item .image.thumb::before,
+#two .work-item .image.thumb::after {
+    content: none !important;
+    display: none !important;
+    opacity: 0 !important;
+}
+
+/* 2. Kills any injected Poptrox or 'View' classes in Section 2 */
+#two .work-item .image.thumb *, 
+#two .work-item .image.thumb .caption,
+#two .work-item .image.thumb [class*="poptrox"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
