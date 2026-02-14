@@ -3256,3 +3256,15 @@ input[type="button"]:hover,
     min-height: 180px !important; /* Forces the box to be exactly this tall */
     margin-bottom: 0 !important;
 }
+/* ==========================================
+   SECTION TWO TEXT SIZING
+   Surgically increases the paragraph and header 
+   text in Section Two by exactly 2px.
+   ========================================== */
+#two .work-item p {
+    font-size: calc(0.8em + 2px) !important; 
+}
+
+#two .work-item h3 {
+    font-size: calc(1em + 2px) !important; 
+}
