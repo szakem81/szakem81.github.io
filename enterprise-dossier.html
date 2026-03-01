@@ -1,261 +1,284 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Executive Impact Dossier | Shem Zakem</title>
+    <title>Executive Impact | Shem Zakem</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #050505;
-            --surface: #0a0a0a;
-            --accent: #49bf9d; 
-            --gold: #d4af37;
+            --surface: #0f1115;
+            --accent-green: #49bf9d; 
+            --accent-gold: #d4af37;
+            --accent-red: #f56a6a;
             --text-main: #ffffff;
-            --text-dim: #888888;
-            --border: rgba(255, 255, 255, 0.1);
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
         }
 
         body {
             background-color: var(--bg);
             color: var(--text-dim);
-            font-family: 'Courier New', Courier, monospace; /* For that Intel vibe */
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.5;
-            text-transform: uppercase; /* Tactical feel */
+            line-height: 1.6;
         }
 
-        .dossier-wrapper {
+        .dossier-container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 60px 40px;
         }
 
-        /* Top Left Avatar & Strategic Header */
-        .executive-header {
+        /* Executive Header */
+        .exec-header {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 40px;
-            margin-bottom: 60px;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 40px;
-        }
-
-        .avatar-frame {
-            width: 150px;
-            height: 150px;
-            border: 1px solid var(--border);
-            padding: 5px;
-            background: var(--surface);
-            transition: all 0.4s ease;
-        }
-
-        .avatar-frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(50%); }
-
-        .avatar-frame:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-            box-shadow: 0 0 20px rgba(73, 191, 157, 0.3);
-        }
-
-        .header-content h1 {
-            font-size: 2.5em;
-            color: var(--text-main);
-            margin: 0;
-            letter-spacing: 4px;
-        }
-
-        .header-content .status-line {
-            color: var(--accent);
-            font-size: 0.9em;
-            margin-top: 10px;
-            letter-spacing: 2px;
-        }
-
-        /* Action Links */
-        .nav-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid var(--border);
             margin-bottom: 50px;
         }
 
-        .nav-link {
-            border: 1px solid var(--border);
-            padding: 10px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-dim);
-            font-size: 0.75em;
-            transition: all 0.3s;
+        .exec-avatar {
+            width: 140px;
+            height: 140px;
+            border: 2px solid var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            flex-shrink: 0;
         }
 
-        .nav-link:hover {
-            background: var(--accent);
-            color: #000;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(73, 191, 157, 0.4);
-        }
+        .exec-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Mission Profile */
-        .section-header {
-            background: var(--surface);
-            padding: 10px 20px;
-            border-left: 5px solid var(--accent);
+        .exec-info h1 {
+            font-size: 2.8em;
+            font-weight: 900;
             color: var(--text-main);
-            font-weight: bold;
-            margin-bottom: 25px;
-            letter-spacing: 2px;
+            margin: 0;
+            letter-spacing: -1px;
+            text-transform: uppercase;
         }
 
-        .intel-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        .exec-info .status-tag {
+            font-size: 0.85em;
+            color: var(--accent-green);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        /* Tactical Navigation */
+        .nav-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
             margin-bottom: 60px;
         }
 
-        /* Operational Experience Cards */
-        .op-card {
+        .nav-item {
+            padding: 10px 20px;
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.75em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            border-color: var(--accent-green);
+            color: var(--text-main);
+            background: rgba(73, 191, 157, 0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+
+        /* Section Styling */
+        .section-label {
+            font-size: 0.75em;
+            color: var(--accent-green);
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-label::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: var(--border);
+            margin-left: 20px;
+        }
+
+        /* Impact Cards */
+        .impact-card {
             background: var(--surface);
             border: 1px solid var(--border);
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border-radius: 4px;
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .op-card:hover {
+        .impact-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            border-color: var(--accent-green);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.6);
         }
 
-        .op-card h2 { color: var(--text-main); font-size: 1.2em; margin-top: 0; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-        .op-card h3 { color: var(--accent); font-size: 0.85em; margin: 15px 0 5px 0; }
-        
-        .data-point {
+        .impact-card.priority { border-left: 4px solid var(--accent-red); }
+        .impact-card.award { border-left: 4px solid var(--accent-gold); }
+
+        .impact-card h2 {
+            font-size: 1.4em;
+            color: var(--text-main);
+            margin: 0 0 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Metric Grid */
+        .stats-row {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            font-size: 0.9em;
-            color: #ccc;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 2px;
         }
 
-        .data-point span:last-child { color: var(--accent); font-weight: bold; }
-        .gold-accent { color: var(--gold) !important; }
+        .stat-item .label { display: block; font-size: 0.65em; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+        .stat-item .value { display: block; font-size: 1.6em; font-weight: 900; color: #fff; }
 
-        /* Typography */
-        p { font-family: sans-serif; text-transform: none; color: #adb5bd; line-height: 1.6; margin-bottom: 15px; }
-        ul { font-family: sans-serif; text-transform: none; color: #adb5bd; padding-left: 20px; }
-        li { margin-bottom: 8px; }
-        strong { color: var(--text-main); }
+        .content-text { font-size: 0.95em; color: #cbd5e1; }
+        .content-text strong { color: var(--text-main); }
+        .content-text p { margin-bottom: 15px; }
+
+        /* Audit Table */
+        .audit-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .audit-table th { text-align: left; padding: 15px; font-size: 0.7em; color: var(--accent-green); text-transform: uppercase; border-bottom: 1px solid var(--border); }
+        .audit-table td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 0.9em; vertical-align: top; }
+
+        footer {
+            margin-top: 100px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.7em;
+            letter-spacing: 3px;
+            color: #444;
+        }
 
         @media (max-width: 800px) {
-            .intel-grid { grid-template-columns: 1fr; }
-            .executive-header { flex-direction: column; align-items: center; text-align: center; }
+            .exec-header { flex-direction: column; text-align: center; }
+            .stats-row { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
-<div class="dossier-wrapper">
+<div class="dossier-container">
     
-    <header class="executive-header">
-        <div class="avatar-frame">
-            <img src="images/avatar.jpg" alt="Shem Zakem Profile">
+    <header class="exec-header">
+        <div class="exec-avatar">
+            <img src="images/avatar.jpg" alt="Shem Zakem">
         </div>
-        <div class="header-content">
+        <div class="exec-info">
             <h1>Shem Zakem</h1>
-            <div class="status-line">EXECUTIVE PRODUCT STRATEGY // IMPACT DOSSIER</div>
-            <div class="status-line" style="color: #666; font-size: 0.7em;">CLEARANCE: EXPIRED / RE-INVESTIGATION ELIGIBLE</div>
+            <div class="status-tag">Executive Product Strategy // Impact & Scale</div>
+            <div style="font-size: 0.7em; margin-top: 10px; color: #555;">SYSTEM STATUS: ONLINE // DATA ENCRYPTED // 2026</div>
         </div>
     </header>
 
-    <div class="nav-grid">
-        <a href="enterprise.html" class="nav-link">EXIT DOSSIER</a>
-        <a href="assets/docs/Zakem_Commercial_Resume.pdf" class="nav-link">DOWNLOAD CV</a>
-        <a href="https://www.linkedin.com/in/pro-geek" class="nav-link">LINKEDIN PROFILE</a>
-        <a href="assets/docs/US_Patent_9276418.pdf" class="nav-link">VIEW PATENT</a>
+    <nav class="nav-bar">
+        <a href="enterprise.html" class="nav-item">Exit Dossier</a>
+        <a href="assets/docs/Zakem_Commercial_Resume.pdf" class="nav-item">View Resume</a>
+        <a href="https://www.linkedin.com/in/pro-geek" class="nav-item">LinkedIn Profile</a>
+        <a href="assets/docs/US_Patent_9276418.pdf" class="nav-item">View Patent</a>
+    </nav>
+
+    <div class="section-label">Mission Profile</div>
+    <div class="impact-card" style="border-left: 4px solid var(--accent-green);">
+        <p style="font-size: 1.1em; color: #fff;"><strong>Building the software capabilities I wish I had down-range.</strong> A rare combination of Tier-1 Aerospace Engineering (Boeing), High-Scale Tech (Expedia), and Military Leadership (U.S. Army Platoon Sergeant). Specializing in bridging tactical engineering rigor with multi-million dollar commercial P&L objectives.</p>
     </div>
 
-    <div class="section-header">MISSION PROFILE</div>
-    <p style="font-size: 1.1em;">Building the enterprise software capabilities I wish I had down-range. A rare combination of **Tier-1 Aerospace Engineering (Boeing)**, **High-Scale Tech (Expedia)**, and **Military Leadership (U.S. Army Platoon Sergeant)**. Specializing in bridging tactical engineering rigor with multi-million dollar commercial P&L objectives.</p>
+    <div class="section-label">Operational Deployments</div>
 
-    <div class="intel-grid" style="margin-top: 40px;">
-        <div>
-            <div class="section-header">CORE COMPETENCIES</div>
-            <ul style="list-style-type: square; color: var(--accent);">
-                <li><strong>PRODUCT STRATEGY:</strong> 0→1 PLATFORM MODERNIZATION</li>
-                <li><strong>AGILE GOVERNANCE:</strong> SAFe / LEAN MASTER</li>
-                <li><strong>DATA ARCHITECTURE:</strong> API ORCHESTRATION</li>
-                <li><strong>RISK MITIGATION:</strong> FAA/DoD COMPLIANCE</li>
-            </ul>
-        </div>
-        <div>
-            <div class="section-header">TECHNICAL STACK</div>
-            <ul style="list-style-type: square; color: var(--accent);">
-                <li><strong>CLOUD:</strong> AWS / AZURE / DATA LAKES</li>
-                <li><strong>EDGE:</strong> IOT EDGE / OFFLINE-FIRST SYNC</li>
-                <li><strong>OPS:</strong> JIRA / CONFLUENCE / TABLEAU</li>
-                <li><strong>CORE:</strong> JAVA / C++ / SQL / REST API</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section-header">OPERATIONAL DEPLOYMENTS</div>
-
-    <div class="op-card">
-        <h3 class="gold-accent">AEROSPACE MODERNIZATION // 2014-2018</h3>
-        <h2>THE BOEING COMPANY | LEAD TECHNICAL PRODUCT OWNER</h2>
-        <div class="data-point"><span>EXCEPTIONAL PERFORMANCE AWARD:</span><span>VERIFIED</span></div>
-        <div class="data-point"><span>GLOBAL LEADERSHIP:</span><span>75+ STAFF</span></div>
-        <div class="data-point"><span>DEFECT REDUCTION:</span><span>34%</span></div>
+    <div class="impact-card award">
+        <h3>Aerospace Modernization // 2014-2018</h3>
+        <h2 style="color: var(--accent-gold);">The Boeing Company | Lead Technical Product Owner</h2>
         
-        <p><strong>ROOT CAUSE ANALYSIS:</strong> Formally recognized for fixing a failing RCA process and eliminating systemic software defects in the 787 Toolbox. Led a cross-functional organization of Engineers, UX, and QA across multiple 0→1 product lines.</p>
-        <p><strong>INTELLIGENT WIRING:</strong> Shipped the "Intelligent Wiring" module, directly improving AOG (Aircraft on Ground) metrics for major global carriers and reducing aircraft downtime.</p>
-    </div>
-
-    <div class="op-card">
-        <h3>GLOBAL CLOUD INFRASTRUCTURE // 2018-2023</h3>
-        <h2>EXPEDIA GROUP | SENIOR MANAGER, PRODUCT MANAGEMENT</h2>
-        <div class="data-point"><span>ANNUAL OPEX SAVINGS:</span><span>$4.2M</span></div>
-        <div class="data-point"><span>MANUAL PROCESSING SAVINGS:</span><span>$1.4M</span></div>
-        <div class="data-point"><span>PARTNER SATISFACTION BOOST:</span><span>32%</span></div>
-
-        <p><strong>COMMON OPERATING PICTURE:</strong> Orchestrated the 0→1 migration of legacy workflows to a single Salesforce instance, providing leadership with a centralized view of global operations.</p>
-        <p><strong>PREDICTIVE AI:</strong> Shipped ML models that flagged partner issues before escalation. Integrated Dropbox and Salesforce APIs to automate document ingestion, eliminating massive data fragmentation.</p>
-    </div>
-
-    <div class="op-card">
-        <h3>LOGISTICS INTELLIGENCE // 2023-PRESENT</h3>
-        <h2>PRINCIPAL TECHNICAL PROGRAM MANAGER | CONSULTANT</h2>
-        <div class="data-point"><span>HARD COST REDUCTION:</span><span>12%</span></div>
-        <div class="data-point"><span>MONTHLY GROWTH:</span><span>21%</span></div>
-        <div class="data-point"><span>DELIVERY SPEED:</span><span>+29% ACCURACY</span></div>
-
-        <p><strong>INVENTORY LATENCY:</strong> Built a unified API layer to aggregate orders from multiple streams, cutting order-to-delivery time by 21%. Applied enterprise-grade Agile frameworks to drive scale without increasing headcount.</p>
-    </div>
-
-    <div class="intel-grid">
-        <div class="op-card" style="margin-bottom: 0;">
-            <h3 class="gold-accent">TECHNICAL VALIDATION</h3>
-            <h2>UNIVERSITY OF WASHINGTON</h2>
-            <div class="data-point"><span>B.S. COMPUTER SCIENCE:</span><span>HONORS</span></div>
-            <div class="data-point"><span>B.S. COMPUTER ENGINEERING:</span><span>HONORS</span></div>
-            <p><strong>1ST PLACE, SENIOR PROJECT:</strong> Achieved top honors for complex system architecture and engineering rigor.</p>
+        <div class="stats-row">
+            <div class="stat-item"><span class="label">Award Status</span><span class="value" style="color: var(--accent-gold);">EXCEPTIONAL</span></div>
+            <div class="stat-item"><span class="label">Org Leadership</span><span class="value">75+ STAFF</span></div>
+            <div class="stat-item"><span class="label">Defect Reduction</span><span class="value">34%</span></div>
         </div>
-        <div class="op-card" style="margin-bottom: 0;">
-            <h3>INTELLECTUAL PROPERTY</h3>
-            <h2>US PATENT #9,276,418</h2>
-            <div class="data-point"><span>Azure IoT Hardware:</span><span>SECURED</span></div>
-            <div class="data-point"><span>Techstars Alumni:</span><span>PATRIOT BOOT CAMP</span></div>
-            <p>Designed and built a battery exchange kiosk with remote fleet management telemetry. Validated through the Techstars accelerator.</p>
+
+        <div class="content-text">
+            <p><strong>Intelligent Wiring Deployment:</strong> Shipped the "Intelligent Wiring" module, directly improving Aircraft on Ground (AOG) metrics for major global carriers and reducing aircraft downtime.</p>
+            <p><strong>SDLC Governance:</strong> Applied Boeing Certified Lean Master methodologies to the full software development lifecycle, fixing a failing Root Cause Analysis process for the 787 fleet.</p>
         </div>
     </div>
 
-    <footer style="margin-top: 80px; padding-bottom: 40px; border-top: 1px solid var(--border); padding-top: 20px; font-size: 0.8em; letter-spacing: 2px;">
-        SYSTEM STATUS: ONLINE // STRATEGIC IMPACT VERIFIED // 2026
+    <div class="impact-card">
+        <h3>Global Platform Scale // 2018-2023</h3>
+        <h2>Expedia Group | Senior Manager, Product Management</h2>
+        
+        <div class="stats-row">
+            <div class="stat-item"><span class="label">OpEx Savings</span><span class="value">$4.2M / YR</span></div>
+            <div class="stat-item"><span class="label">Manual Reduction</span><span class="value">$1.4M</span></div>
+            <div class="stat-item"><span class="label">Partner SAT</span><span class="value">+32%</span></div>
+        </div>
+
+        <div class="content-text">
+            <p><strong>Common Operating Picture:</strong> Orchestrated the 0&rarr;1 migration of legacy workflows to a centralized Salesforce Service Cloud instance, providing leadership with a 360&deg; view of global operations.</p>
+            <p><strong>Predictive AI Implementation:</strong> Shipped ML models that flagged partner issues before escalation. Integrated Dropbox and Salesforce APIs to automate ingestion, solving massive enterprise data fragmentation.</p>
+        </div>
+    </div>
+
+    <div class="impact-card priority">
+        <h3>Logistics Intelligence // 2023-Present</h3>
+        <h2>Principal Technical Program Manager | Consultant</h2>
+        
+        <div class="stats-row">
+            <div class="stat-item"><span class="label">Hard Cost Reduction</span><span class="value">12%</span></div>
+            <div class="stat-item"><span class="label">Delivery Accuracy</span><span class="value">+29%</span></div>
+            <div class="stat-item"><span class="label">Monthly Growth</span><span class="value">21%</span></div>
+        </div>
+
+        <div class="content-text">
+            <p><strong>Inventory Latency:</strong> Built a unified API layer to aggregate data from multiple hardware and mobile streams, cutting order-to-delivery time by 21% without increasing headcount.</p>
+        </div>
+    </div>
+
+    <div class="section-label">Infrastructure & Credentials</div>
+    <div class="impact-card">
+        <table class="audit-table">
+            <thead>
+                <tr><th>Domain</th><th>Technical Stack & Frameworks</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Strategy</strong></td><td>SAFe&reg; Agilist, Boeing Lean Master, Certified Scrum Master.</td></tr>
+                <tr><td><strong>Architecture</strong></td><td>AWS, Azure, Data Lakes, Offline-First Sync, IoT Edge Routing.</td></tr>
+                <tr><td><strong>Engineering</strong></td><td>Java, C++, SQL, REST API Orchestration, CI/CD Pipelines.</td></tr>
+                <tr><td><strong>Academic</strong></td><td>UW B.S. CS & CE | 1st Place, Senior Project Competition.</td></tr>
+                <tr><td><strong>IP Status</strong></td><td>US Patent #9,276,418 | Techstars Patriot Boot Camp Alumni.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        CONFIDENTIAL // SHEM ZAKEM // STRATEGIC IMPACT DOSSIER // VERIFIED 2026
     </footer>
+
 </div>
 
 </body>
