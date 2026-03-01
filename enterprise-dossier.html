@@ -1,206 +1,235 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Enterprise Dossier | Shem Zakem</title>
+    <title>Enterprise Impact | Shem Zakem</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <style>
         :root {
-            --bg: #0b0e14;
-            --accent: #49bf9d; /* Theme Green */
-            --gold: #d4af37;   /* Award Gold */
-            --text: #e1e1e1;
-            --subtext: #a0a0a0;
-            --card-bg: #161b22;
-            --border: rgba(73, 191, 157, 0.3);
+            --bg: #05070a;
+            --surface: #0d1117;
+            --accent: #49bf9d; 
+            --gold: #d4af37;
+            --text-main: #ffffff;
+            --text-dim: #8b949e;
+            --border: rgba(73, 191, 157, 0.15);
         }
 
         body {
             background-color: var(--bg);
-            color: var(--text);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
+            color: var(--text-dim);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-
-        /* Navigation */
-        .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: var(--subtext);
-            text-decoration: none;
-            font-size: 0.85em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+        /* Layout Container */
+        .dossier-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
         }
-        .back-btn:hover { color: var(--accent); transform: translateX(-5px); }
 
-        /* Header */
-        header {
+        /* Top Left Avatar & Header */
+        .executive-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 80px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 40px;
-            margin-bottom: 60px;
-            text-align: center;
         }
-        h1 { font-size: 2.5em; letter-spacing: 2px; margin: 0; text-transform: uppercase; font-weight: 900; color: #fff; }
-        .subtitle { color: var(--accent); font-weight: 700; letter-spacing: 4px; font-size: 0.9em; margin-top: 10px; text-transform: uppercase; }
 
-        /* Grid & Cards */
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .section-full { grid-column: 1 / -1; }
+        .avatar-frame {
+            width: 120px;
+            height: 120px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
 
-        .card {
-            background: var(--card-bg);
+        .avatar-frame:hover {
+            transform: scale(1.05) translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 0 30px rgba(73, 191, 157, 0.3);
+        }
+
+        .avatar-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+        .header-content h1 {
+            font-size: 2.2em;
+            font-weight: 800;
+            color: var(--text-main);
+            margin: 0;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .header-content .title-bar {
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        /* Section Components */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 30px;
+        }
+
+        .full-width { grid-column: span 12; }
+        .half-width { grid-column: span 6; }
+
+        .impact-card {
+            background: var(--surface);
             border: 1px solid rgba(255,255,255,0.05);
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-radius: 2px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             position: relative;
-            overflow: hidden;
-        }
-        .card:hover { 
-            transform: translateY(-10px); 
-            border-color: var(--accent); 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
         }
 
-        .award-card { border-left: 5px solid var(--gold); }
-        .award-card:hover { border-color: var(--gold); }
-
-        h2 { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-top: 0; font-size: 1.4em; }
-        h3 { color: var(--accent); font-size: 0.85em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
-        .gold-text { color: var(--gold) !important; }
-
-        /* Metrics */
-        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 25px 0; }
-        .metric {
-            background: rgba(0,0,0,0.3);
-            padding: 15px;
-            border-radius: 4px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.3s ease;
+        .impact-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
         }
-        .metric:hover { background: rgba(73, 191, 157, 0.1); border-color: var(--accent); transform: scale(1.05); }
-        .metric-label { display: block; font-size: 0.7em; text-transform: uppercase; color: var(--subtext); margin-bottom: 5px; }
-        .metric-val { display: block; font-size: 1.3em; font-weight: 900; color: #fff; }
+
+        .impact-card.award { border-left: 4px solid var(--gold); }
+        .impact-card.award:hover { border-color: var(--gold); }
+
+        h2 { font-size: 1.5em; color: var(--text-main); margin-bottom: 20px; font-weight: 700; }
+        h3 { font-size: 0.8em; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
+
+        /* Impact Metrics */
+        .metrics-row {
+            display: flex;
+            gap: 40px;
+            margin: 30px 0;
+            background: rgba(0,0,0,0.2);
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .metric-item .label { display: block; font-size: 0.7em; text-transform: uppercase; color: var(--text-dim); }
+        .metric-item .value { display: block; font-size: 1.8em; font-weight: 900; color: #fff; }
 
         /* Deep Dive Content */
-        .deep-dive {
-            background: rgba(0,0,0,0.2);
-            padding: 25px;
-            margin-top: 25px;
-            border-radius: 4px;
-            font-size: 0.95em;
-            border-left: 3px solid var(--accent);
-        }
-        .deep-dive strong { color: #fff; display: block; margin-bottom: 10px; font-size: 1.1em; }
+        .content-body { font-size: 1em; color: #adb5bd; }
+        .content-body strong { color: var(--text-main); }
+        .content-body p { margin-bottom: 20px; }
 
         /* Audit Table */
-        .audit-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        .audit-table th { text-align: left; padding: 15px; background: rgba(255,255,255,0.03); color: var(--accent); text-transform: uppercase; font-size: 0.8em; }
-        .audit-table td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
-        .audit-table tr:hover { background: rgba(255,255,255,0.02); }
+        .audit-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .audit-table th { text-align: left; padding: 15px; color: var(--accent); font-size: 0.8em; text-transform: uppercase; border-bottom: 2px solid var(--border); }
+        .audit-table td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
 
-        /* Footer */
-        footer { margin-top: 80px; text-align: center; color: var(--subtext); font-size: 0.8em; padding-bottom: 40px; }
+        /* Action Buttons */
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .nav-link:hover { color: var(--accent); }
 
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+        @media (max-width: 900px) {
+            .half-width { grid-column: span 12; }
+            .executive-header { flex-direction: column; text-align: left; }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <a href="enterprise.html" class="back-btn">← Return to Executive Summary</a>
-    
-    <header>
-        <h1>Commercial Enterprise Dossier</h1>
-        <div class="subtitle">Technical Product Leadership & Revenue Operations</div>
+<div class="dossier-wrapper">
+    <a href="enterprise.html" class="nav-link">← EXIT DOSSIER</a>
+
+    <header class="executive-header">
+        <div class="avatar-frame">
+            <img src="images/avatar.jpg" alt="Shem Zakem">
+        </div>
+        <div class="header-content">
+            <h1>Shem Zakem</h1>
+            <div class="title-bar">Strategic Product Leadership // Impact & Scale</div>
+            <p style="margin-top: 15px; max-width: 600px;">Directing high-stakes modernization across aerospace, defense technology, and global cloud ecosystems. Expert in bridging tactical engineering rigor with commercial P&L objectives.</p>
+        </div>
     </header>
 
-    <div class="grid">
+    <div class="impact-grid">
         
-        <div class="card award-card section-full">
-            <h3 class="gold-text">Institutional Recognition</h3>
-            <h2>Boeing Exceptional Performance Award</h2>
-            <p>Formally recognized for driving the engineering lifecycle of <strong>Toolbox 2.0</strong>, a mission-critical SaaS backbone for 787/737 global fleet maintenance[cite: 32, 33].</p>
+        <div class="impact-card award full-width">
+            <h3>Institutional Performance // 2014-2018</h3>
+            <h2 style="color: var(--gold);">Boeing Exceptional Performance Award</h2>
             
-            <div class="metric-grid">
-                <div class="metric"><span class="metric-label">Defect Reduction</span><span class="metric-value">34%</span></div>
-                <div class="metric"><span class="metric-label">Org Size</span><span class="metric-value">75+ Staff</span></div>
-                <div class="metric"><span class="metric-label">Rating</span><span class="metric-value">EXCEPTIONAL</span></div>
+            <div class="metrics-row">
+                <div class="metric-item"><span class="label">Organization Size</span><span class="value">75+ Staff</span></div>
+                <div class="metric-item"><span class="label">Defect Reduction</span><span class="value">34%</span></div>
+                <div class="metric-item"><span class="label">System Criticality</span><span class="value">Tier 1</span></div>
             </div>
 
-            <div class="deep-dive">
-                <strong>The Strategic Impact:</strong>
-                Managed a massive cross-functional organization as a Certified Boeing Lean Master[cite: 33, 54]. Transitioned legacy architectures to high-availability cloud systems while maintaining 100% adherence to FAA regulatory logic[cite: 31, 35]. This award validates the ability to deliver technical rigor within the world's most stringent engineering environments.
+            <div class="content-body">
+                <p><strong>The Objective:</strong> Modernize the "Toolbox 2.0" platform—the mission-critical SaaS backbone used by global airline partners to maintain the 787 and 737 fleets.</p>
+                <p><strong>The Strategy:</strong> Orchestrated a massive SAFe Agile transformation. As a Certified Boeing Lean Master, I eliminated systemic bottlenecks in the engineering lifecycle and integrated automated simulation environments (SIL/HIL/VIL) to validate safety-critical software.</p>
+                <p><strong>The Outcome:</strong> Successfully deployed an offline-first architecture for disconnected tarmac operations, significantly increasing aircraft availability and earning formal recognition for exceptional performance.</p>
             </div>
         </div>
 
-        <div class="card">
-            <h3>Revenue Operations</h3>
-            <h2>Expedia Group: Global Modernization</h2>
-            <p>Led a platform turnaround focused on automated self-service and data governance across 4 global lines of business[cite: 23, 24].</p>
+        <div class="impact-card half-width">
+            <h3>Commercial Monetization // 2018-2023</h3>
+            <h2>Expedia Group: Infrastructure Scale</h2>
             
-            <div class="metric-grid">
-                <div class="metric"><span class="metric-label">Annual Savings</span><span class="metric-value">$4.2M</span></div>
-                <div class="metric"><span class="metric-label">Revenue Impact</span><span class="metric-value">$2.7M</span></div>
+            <div class="metrics-row" style="gap: 20px;">
+                <div class="metric-item"><span class="label">OpEx Savings</span><span class="value">$4.2M</span></div>
+                <div class="metric-item"><span class="label">Revenue Impact</span><span class="value">$2.7M</span></div>
             </div>
 
-            <div class="deep-dive">
-                <strong>Technical Deep Dive:</strong>
-                Engineered automated API ingestion pipelines to eliminate data fragmentation[cite: 28]. This shift established a "Single Source of Truth" for executive roadmaps and saved $1.4M in manual labor costs while ensuring 100% security compliance[cite: 26, 29].
-            </div>
-        </div>
-
-        <div class="card award-card">
-            <h3 class="gold-text">Academic Excellence</h3>
-            <h2>1st Place: Senior Computer Engineering Project</h2>
-            <p>Awarded top honors at the <strong>University of Washington</strong> for complex systems architecture and full-stack innovation[cite: 51, 52].</p>
-
-            <div class="deep-dive">
-                <strong>Foundational Rigor:</strong>
-                This award represents the core engineering capability that powers my current leadership. By winning first place among elite cohorts, I established the technical authority required to manage hardware/software integration and deep mathematical modeling in commercial settings[cite: 51, 52].
+            <div class="content-body">
+                <p>Directed a global platform turnaround focusing on API orchestration and 360° partner data governance. Negotiated complex compliance logic across Legal, Risk, and Fraud departments to accelerate deployment velocity.</p>
             </div>
         </div>
 
-        <div class="card">
-            <h3>Intellectual Property</h3>
-            <h2>U.S. Patent #9,276,418</h2>
-            <p>Secured utility patent for an end-to-end, zero-waste hardware-to-cloud battery exchange system[cite: 36, 38].</p>
-
-            <div class="deep-dive">
-                <strong>Technical Stack:</strong>
-                Architected Azure IoT Edge routing for remote telemetry and automated P&L tracking[cite: 38]. Successfully scaled the business through the **Techstars** accelerator, validating product-market fit and manufacturing readiness.
-            </div>
+        <div class="impact-card award half-width">
+            <h3>Technical Validation // Academic</h3>
+            <h2 style="color: var(--gold);">1st Place: Computer Engineering Senior Project</h2>
+            <p>Achieved top honors at the <strong>University of Washington</strong> for complex systems architecture. This foundational win validates the engineering authority required to lead Tier-1 global technical organizations.</p>
         </div>
 
-        <div class="card section-full">
-            <h3>Governance & Tooling</h3>
-            <h2>Executive Technical Stack Audit</h2>
+        <div class="impact-card full-width">
+            <h3>Governance Framework // Technical Stack</h3>
+            <h2>Operational Infrastructure Audit</h2>
             
             <table class="audit-table">
                 <thead>
-                    <tr><th>Domain</th><th>Core Technologies & Methodologies</th></tr>
+                    <tr><th>Domain</th><th>Frameworks & Technologies</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td><strong>Cloud & Infrastructure</strong></td><td>AWS, Azure, Data Lakes, Offline-First Architecture, IoT Edge. [cite: 55]</td></tr>
-                    <tr><td><strong>Agile Operations</strong></td><td>SAFe® Agilist, Boeing Lean Master, Certified Scrum Master. [cite: 54]</td></tr>
-                    <tr><td><strong>Data & Analytics</strong></td><td>Tableau, Salesforce Analytics, Real-Time P&L Dashboards. [cite: 19, 57]</td></tr>
-                    <tr><td><strong>Compliance</strong></td><td>FAA Regulatory Backlogs, DoD Tactical Security (Secret Eligible). [cite: 8, 35, 56]</td></tr>
+                    <tr><td><strong>Product & Agile</strong></td><td>SAFe® Agilist, Boeing Lean Master, Certified Scrum Master.</td></tr>
+                    <tr><td><strong>Cloud & Edge</strong></td><td>AWS, Azure, Data Lakes, Offline-First Sync, IoT Edge Routing.</td></tr>
+                    <tr><td><strong>Governance</strong></td><td>Confluence Artifact Libraries, Jira Analytics, API Orchestration.</td></tr>
+                    <tr><td><strong>Compliance</strong></td><td>FAA Regulatory Logic, DoD Security Protocols (Secret Eligible).</td></tr>
                 </tbody>
             </table>
         </div>
 
     </div>
 
-    <footer>
-        <p>&copy; 2026 Shem Zakem | Enterprise Portfolio | Medford, OR</p>
+    <footer style="margin-top: 100px; padding-bottom: 50px; text-align: left; opacity: 0.5; font-size: 0.7em; letter-spacing: 2px;">
+        CONFIDENTIAL // SHEM ZAKEM // STRATEGIC IMPACT DOSSIER
     </footer>
 </div>
 
