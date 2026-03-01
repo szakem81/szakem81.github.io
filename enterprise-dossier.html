@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Enterprise Dossier | Shem Zakem</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <style>
+        :root {
+            --bg: #0b0e14;
+            --accent: #49bf9d; /* Theme Green */
+            --gold: #d4af37;   /* Award Gold */
+            --text: #e1e1e1;
+            --subtext: #a0a0a0;
+            --card-bg: #161b22;
+            --border: rgba(73, 191, 157, 0.3);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Navigation */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--subtext);
+            text-decoration: none;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover { color: var(--accent); transform: translateX(-5px); }
+
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 40px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        h1 { font-size: 2.5em; letter-spacing: 2px; margin: 0; text-transform: uppercase; font-weight: 900; color: #fff; }
+        .subtitle { color: var(--accent); font-weight: 700; letter-spacing: 4px; font-size: 0.9em; margin-top: 10px; text-transform: uppercase; }
+
+        /* Grid & Cards */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .section-full { grid-column: 1 / -1; }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--accent); 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+        }
+
+        .award-card { border-left: 5px solid var(--gold); }
+        .award-card:hover { border-color: var(--gold); }
+
+        h2 { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-top: 0; font-size: 1.4em; }
+        h3 { color: var(--accent); font-size: 0.85em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 5px; }
+        .gold-text { color: var(--gold) !important; }
+
+        /* Metrics */
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin: 25px 0; }
+        .metric {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+        .metric:hover { background: rgba(73, 191, 157, 0.1); border-color: var(--accent); transform: scale(1.05); }
+        .metric-label { display: block; font-size: 0.7em; text-transform: uppercase; color: var(--subtext); margin-bottom: 5px; }
+        .metric-val { display: block; font-size: 1.3em; font-weight: 900; color: #fff; }
+
+        /* Deep Dive Content */
+        .deep-dive {
+            background: rgba(0,0,0,0.2);
+            padding: 25px;
+            margin-top: 25px;
+            border-radius: 4px;
+            font-size: 0.95em;
+            border-left: 3px solid var(--accent);
+        }
+        .deep-dive strong { color: #fff; display: block; margin-bottom: 10px; font-size: 1.1em; }
+
+        /* Audit Table */
+        .audit-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .audit-table th { text-align: left; padding: 15px; background: rgba(255,255,255,0.03); color: var(--accent); text-transform: uppercase; font-size: 0.8em; }
+        .audit-table td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+        .audit-table tr:hover { background: rgba(255,255,255,0.02); }
+
+        /* Footer */
+        footer { margin-top: 80px; text-align: center; color: var(--subtext); font-size: 0.8em; padding-bottom: 40px; }
+
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="enterprise.html" class="back-btn">← Return to Executive Summary</a>
+    
+    <header>
+        <h1>Commercial Enterprise Dossier</h1>
+        <div class="subtitle">Technical Product Leadership & Revenue Operations</div>
+    </header>
+
+    <div class="grid">
+        
+        <div class="card award-card section-full">
+            <h3 class="gold-text">Institutional Recognition</h3>
+            <h2>Boeing Exceptional Performance Award</h2>
+            <p>Formally recognized for driving the engineering lifecycle of <strong>Toolbox 2.0</strong>, a mission-critical SaaS backbone for 787/737 global fleet maintenance[cite: 32, 33].</p>
+            
+            <div class="metric-grid">
+                <div class="metric"><span class="metric-label">Defect Reduction</span><span class="metric-value">34%</span></div>
+                <div class="metric"><span class="metric-label">Org Size</span><span class="metric-value">75+ Staff</span></div>
+                <div class="metric"><span class="metric-label">Rating</span><span class="metric-value">EXCEPTIONAL</span></div>
+            </div>
+
+            <div class="deep-dive">
+                <strong>The Strategic Impact:</strong>
+                Managed a massive cross-functional organization as a Certified Boeing Lean Master[cite: 33, 54]. Transitioned legacy architectures to high-availability cloud systems while maintaining 100% adherence to FAA regulatory logic[cite: 31, 35]. This award validates the ability to deliver technical rigor within the world's most stringent engineering environments.
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Revenue Operations</h3>
+            <h2>Expedia Group: Global Modernization</h2>
+            <p>Led a platform turnaround focused on automated self-service and data governance across 4 global lines of business[cite: 23, 24].</p>
+            
+            <div class="metric-grid">
+                <div class="metric"><span class="metric-label">Annual Savings</span><span class="metric-value">$4.2M</span></div>
+                <div class="metric"><span class="metric-label">Revenue Impact</span><span class="metric-value">$2.7M</span></div>
+            </div>
+
+            <div class="deep-dive">
+                <strong>Technical Deep Dive:</strong>
+                Engineered automated API ingestion pipelines to eliminate data fragmentation[cite: 28]. This shift established a "Single Source of Truth" for executive roadmaps and saved $1.4M in manual labor costs while ensuring 100% security compliance[cite: 26, 29].
+            </div>
+        </div>
+
+        <div class="card award-card">
+            <h3 class="gold-text">Academic Excellence</h3>
+            <h2>1st Place: Senior Computer Engineering Project</h2>
+            <p>Awarded top honors at the <strong>University of Washington</strong> for complex systems architecture and full-stack innovation[cite: 51, 52].</p>
+
+            <div class="deep-dive">
+                <strong>Foundational Rigor:</strong>
+                This award represents the core engineering capability that powers my current leadership. By winning first place among elite cohorts, I established the technical authority required to manage hardware/software integration and deep mathematical modeling in commercial settings[cite: 51, 52].
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Intellectual Property</h3>
+            <h2>U.S. Patent #9,276,418</h2>
+            <p>Secured utility patent for an end-to-end, zero-waste hardware-to-cloud battery exchange system[cite: 36, 38].</p>
+
+            <div class="deep-dive">
+                <strong>Technical Stack:</strong>
+                Architected Azure IoT Edge routing for remote telemetry and automated P&L tracking[cite: 38]. Successfully scaled the business through the **Techstars** accelerator, validating product-market fit and manufacturing readiness.
+            </div>
+        </div>
+
+        <div class="card section-full">
+            <h3>Governance & Tooling</h3>
+            <h2>Executive Technical Stack Audit</h2>
+            
+            <table class="audit-table">
+                <thead>
+                    <tr><th>Domain</th><th>Core Technologies & Methodologies</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Cloud & Infrastructure</strong></td><td>AWS, Azure, Data Lakes, Offline-First Architecture, IoT Edge. [cite: 55]</td></tr>
+                    <tr><td><strong>Agile Operations</strong></td><td>SAFe® Agilist, Boeing Lean Master, Certified Scrum Master. [cite: 54]</td></tr>
+                    <tr><td><strong>Data & Analytics</strong></td><td>Tableau, Salesforce Analytics, Real-Time P&L Dashboards. [cite: 19, 57]</td></tr>
+                    <tr><td><strong>Compliance</strong></td><td>FAA Regulatory Backlogs, DoD Tactical Security (Secret Eligible). [cite: 8, 35, 56]</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Shem Zakem | Enterprise Portfolio | Medford, OR</p>
+    </footer>
+</div>
+
+</body>
+</html>
