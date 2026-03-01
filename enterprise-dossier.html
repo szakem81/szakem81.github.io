@@ -37,13 +37,13 @@
             align-items: flex-start;
             gap: 40px;
             padding-bottom: 50px;
-            border-bottom: 1px solid var(--accent-blue);
+            border-bottom: 2px solid var(--accent-blue);
             margin-bottom: 50px;
         }
 
         .avatar-frame {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             flex-shrink: 0;
             border-radius: 4px;
             overflow: hidden;
@@ -77,7 +77,7 @@
             margin-top: 5px;
         }
 
-        /* Digital Resume Navigation */
+        /* Navigation */
         .nav-actions {
             display: flex;
             gap: 15px;
@@ -104,7 +104,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* Deep Dive Sections */
+        /* Section Styling */
         .section-label {
             font-size: 0.8em;
             font-weight: 900;
@@ -140,16 +140,16 @@
 
         .highlight-bar {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
             background: rgba(0,0,0,0.4);
             padding: 25px;
             margin: 25px 0;
             border-left: 4px solid var(--accent-amber);
         }
 
-        .data-item .label { display: block; font-size: 0.7em; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
-        .data-item .value { display: block; font-size: 1.8em; font-weight: 900; color: #fff; }
+        .data-item .label { display: block; font-size: 0.65em; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+        .data-item .value { display: block; font-size: 1.6em; font-weight: 900; color: #fff; }
 
         h2 { font-size: 1.8em; color: #fff; margin: 0 0 10px 0; font-weight: 800; }
         h3 { color: var(--accent-blue); font-size: 0.9em; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 2px; }
@@ -158,7 +158,6 @@
         .text-block strong { color: #fff; }
         .text-block p { margin-bottom: 20px; }
 
-        /* Tables & Lists */
         .capability-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -168,7 +167,7 @@
 
         .audit-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         .audit-table th { text-align: left; padding: 15px; color: var(--accent-blue); font-size: 0.8em; text-transform: uppercase; border-bottom: 1px solid var(--accent-blue); }
-        .audit-table td { padding: 15px; border-bottom: 1px solid var(--border); font-size: 0.95em; }
+        .audit-table td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 0.9em; }
 
         footer {
             margin-top: 100px;
@@ -198,8 +197,8 @@
         <div class="header-content">
             <h1>Shem Zakem</h1>
             <div class="header-tagline">Principal Product Engineering // Venture Scale & SaaS</div>
-            <p style="margin-top: 15px; max-width: 650px; font-size: 1em; line-height: 1.5;">
-                Orchestrating the convergence of Tier-1 hardware engineering and global SaaS infrastructure. 15+ years delivering mission-critical scale for the Boeing fleet, Expedia's global marketplace, and Techstars-backed ventures.
+            <p style="margin-top: 15px; max-width: 700px; font-size: 1.1em; line-height: 1.6;">
+                15+ years of high-stakes technical leadership bridging Big Tech commercial platforms and mission-critical engineering environments. Proven P&L owner with a record of delivering <strong>$10M+ in combined operational efficiency and revenue growth</strong>.
             </p>
         </div>
     </header>
@@ -211,78 +210,82 @@
         <a href="assets/docs/US_Patent_9276418.pdf" class="btn">Patent Library</a>
     </nav>
 
-    <div class="section-label">Core Institutional Impact</div>
+    <div class="section-label">Institutional P&L Ownership</div>
 
     <div class="deep-dive-card">
-        <h3>Marketplace Infrastructure // 2018-2023</h3>
-        <h2>Global Platform Modernization (Expedia Group)</h2>
+        <h3>Enterprise Platform Transformation // 2018-2023</h3>
+        <h2>Expedia Group: Global Infrastructure Scale</h2>
         
         <div class="highlight-bar">
-            <div class="data-item"><span class="label">Annual OpEx Impact</span><span class="value">$4.2M</span></div>
+            <div class="data-item"><span class="label">Annual OpEx Savings</span><span class="value">$4.2M</span></div>
             <div class="data-item"><span class="label">Incremental Revenue</span><span class="value">$2.7M</span></div>
-            <div class="data-item"><span class="label">Partner NPS Boost</span><span class="value">+32%</span></div>
+            <div class="data-item"><span class="label">Labor Cost Reduction</span><span class="value">$1.4M</span></div>
+            <div class="data-item"><span class="label">Security Compliance</span><span class="value">100%</span></div>
         </div>
 
         <div class="text-block">
-            <p><strong>Scaling the Common Operating Picture:</strong> Orchestrated the 0&rarr;1 migration of legacy B2B/B2C workflows into a centralized Salesforce Service Cloud instance. This effort unified fragmented global business lines, providing executive leadership with a high-fidelity dashboard for real-time operational oversight.</p>
-            <p><strong>Venture-Scale Automation:</strong> Developed automated case-resolution logic and predictive ML models to preempt partner friction before escalation. Engineered API ingestions (Salesforce/Dropbox) that eliminated manual document reconciliation, delivering a <strong>$1.4M hard-cost reduction</strong> in annual labor overhead.</p>
+            <p><strong>Common Operating Picture Strategy:</strong> Orchestrated the 0&rarr;1 migration of fragmented legacy B2B/B2C workflows into a centralized Salesforce instance. This modernization provided executive leadership with a unified, real-time dashboard for global operational oversight.</p>
+            <p><strong>Revenue Operations & Automation:</strong> Engineered automated API ingestion pipelines to eliminate data fragmentation across 4 global lines of business. Developed self-service logic that recovered <strong>$4.2M/year in support overhead</strong> and automated manual processing, saving an additional $1.4M in operational expenditure.</p>
         </div>
     </div>
 
     <div class="deep-dive-card" style="border-left: 4px solid var(--accent-amber);">
-        <h3>Aerospace Platform Engineering // 2014-2018</h3>
+        <h3>Aerospace Lifecycle Management // 2014-2018</h3>
         <h2>The Boeing Company | Lead Technical Product Owner</h2>
         
         <div class="highlight-bar" style="border-left-color: var(--accent-blue);">
             <div class="data-item"><span class="label">Org Leadership</span><span class="value">75+ STAFF</span></div>
-            <div class="data-item"><span class="label">SLA Optimization</span><span class="value">-34% DEFECTS</span></div>
-            <div class="data-item"><span class="label">Internal Recognition</span><span class="value">EXCEPTIONAL</span></div>
+            <div class="data-item"><span class="label">Production Defects</span><span class="value">-34%</span></div>
+            <div class="data-item"><span class="label">Award Rank</span><span class="value">EXCEPTIONAL</span></div>
         </div>
 
         <div class="text-block">
-            <p><strong>Mission-Critical Fleet Diagnostics:</strong> Led the R&D and deployment of the "Intelligent Wiring" module for the 787 Toolbox 2.0. This product directly optimized <strong>Aircraft on Ground (AOG)</strong> metrics, allowing global carriers to perform real-time fault analysis on safety-critical systems.</p>
-            <p><strong>Institutional Lean Transformation:</strong> As a Certified Boeing Lean Master, restructured the Root Cause Analysis (RCA) pipeline to eliminate systemic software bottlenecks. Managed a cross-functional matrix of 75+ engineers, designers, and QA leads to stabilize the global fleet's maintenance backbone.</p>
+            <p><strong>Toolbox 2.0 Product Lifecycle:</strong> Directed the full discovery-to-delivery roadmap for the mission-critical software platform supporting the 787 and 737 global fleets. Earned the <strong>"Exceptional Performance" Award</strong> for neutralizing a failing Root Cause Analysis process and stabilizing the maintenance backbone.</p>
+            <p><strong>High-Availability Edge Strategy:</strong> Managed a cross-functional organization of 75+ staff as a Certified Boeing Lean Master. Successfully deployed an offline-first architecture for secure tarmacs, reducing defect rates by 34% while meeting stringent FAA regulatory requirements.</p>
         </div>
     </div>
+
+    <div class="section-label">Venture Scale & Operational Turnarounds</div>
 
     <div class="capability-grid">
         <div class="deep-dive-card" style="margin-bottom: 0;">
-            <h3>Fractional CPO / Consulting</h3>
-            <h2>Digital Modernization</h2>
+            <h3>Fractional Product Leadership</h3>
+            <h2>Operational Modernization</h2>
             <div class="highlight-bar">
-                <div class="data-item"><span class="label">Hard Cost Reduction</span><span class="value">12%</span></div>
+                <div class="data-item"><span class="label">Hard Cost Savings</span><span class="value">12%</span></div>
+                <div class="data-item"><span class="label">Order Accuracy</span><span class="value">+29%</span></div>
                 <div class="data-item"><span class="label">Monthly Growth</span><span class="value">21%</span></div>
             </div>
             <div class="text-block">
-                <p><strong>Inventory Orchestration:</strong> Built custom API layers to aggregate disparate order streams, cutting order-to-delivery latency by 21% and improving data accuracy by 29% for commercial logistics clients.</p>
+                <p><strong>Logistics Intelligence:</strong> Built a unified API layer to aggregate multi-stream data, cutting order-to-delivery time by 21% and identified margin leakage for commercial logistics clients.</p>
             </div>
         </div>
 
         <div class="deep-dive-card" style="margin-bottom: 0;">
-            <h3>Intellectual Property</h3>
-            <h2>0&rarr;1 Venture Engineering</h2>
+            <h3>Hardware-to-SaaS Startup</h3>
+            <h2>Green Box Batteries: Founder</h2>
             <div class="highlight-bar">
-                <div class="data-item"><span class="label">U.S. Patent Status</span><span class="value">#9,276,418</span></div>
-                <div class="data-item"><span class="label">Acceleration</span><span class="value">TECHSTARS</span></div>
+                <div class="data-item"><span class="label">Rework Reduction</span><span class="value">25%</span></div>
+                <div class="data-item"><span class="label">U.S. Patent</span><span class="value">#9,276,418</span></div>
             </div>
             <div class="text-block">
-                <p><strong>Venture R&D:</strong> Secured utility patents for an end-to-end battery exchange kiosk. Architected Azure IoT Edge telemetry for remote fleet health monitoring and P&L tracking. Selected for Techstars NYC based on technical execution and product-market fit.</p>
+                <p><strong>Venture R&D:</strong> Bootstrapped a hardware startup from conceptual R&D to a manufactured product. Architected Azure IoT telemetry for remote edge fleet management; selected for the <strong>Techstars</strong> accelerator.</p>
             </div>
         </div>
     </div>
 
-    <div class="section-label">Technical Governance Audit</div>
+    <div class="section-label">Credential Audit & Technical Governance</div>
+
     <div class="deep-dive-card">
         <table class="audit-table">
             <thead>
-                <tr><th>Domain</th><th>Enterprise Stack & Governance</th></tr>
+                <tr><th>Governance Domain</th><th>Enterprise Frameworks & Methodology</th></tr>
             </thead>
             <tbody>
-                <tr><td><strong>Leadership</strong></td><td>Scaled Agile (SAFe), Boeing Certified Lean Master, Certified Scrum Master.</td></tr>
-                <tr><td><strong>Infrastructure</strong></td><td>AWS/Azure Cloud, Data Lakes, Offline-First Architecture, IoT Edge.</td></tr>
-                <tr><td><strong>Engineering</strong></td><td>Java, C++, SQL, REST API Orchestration, CI/CD Pipeline Governance.</td></tr>
-                <tr><td><strong>Academic</strong></td><td>UW B.S. CS & CE | 1st Place, Senior Project Design Competition.</td></tr>
-                <tr><td><strong>Compliance</strong></td><td>FAA Regulatory Logic, Global Data Governance, Security Protocol Oversight.</td></tr>
+                <tr><td><strong>Agile Operations</strong></td><td>Scaled Agile (SAFe), Boeing Certified Lean Master, Certified Scrum Master.</td></tr>
+                <tr><td><strong>Cloud Architecture</strong></td><td>AWS, Azure, Data Lakes, Offline-First Architecture, IoT Edge.</td></tr>
+                <tr><td><strong>Engineering Credentials</strong></td><td>UW B.S. CS & CE | 1st Place, Senior Project Design Competition.</td></tr>
+                <tr><td><strong>Regulatory Compliance</strong></td><td>FAA Regulatory Logic, Global Data Governance, Security Protocol Oversight.</td></tr>
             </tbody>
         </table>
     </div>
